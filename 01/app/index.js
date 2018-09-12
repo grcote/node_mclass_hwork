@@ -73,11 +73,7 @@ var handlers = {};
 
 // Hello handler
 handlers.hello = function(method,callback){
-	var payload = {}
-
-	if (method == 'post'){
-		var payload = {'welcome_message': 'Thank you for visiting my RESTful JSON API'};
-	}
+	var payload = method == 'post' ? {'welcome_message': 'Thank you for visiting my RESTful JSON API'} : {};
 
 	callback(payload);
 };
